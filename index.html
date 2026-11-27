@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha-RPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="imagens/icon.jpeg">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+   <header>
+     <div class="barra-topo">
+       <button type="button" id="botao-menu" class="botao-icone" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+       <nav id="menu">
+         <a href="#sobre">Sobre o Herói</a>
+         <a href="#atributos">Atributos & Habilidades</a>
+         <a href="#inventario">Inventário</a>
+         <a href="#contato">Contato com a Guilda</a>
+       </nav>
+       <button type="button" id="botao-tema" class="botao-icone" aria-pressed="false">🌙 Modo noturno</button>
+     </div>
+   </header>
+
+   <main>
+     <p id="saudacao" class="saudacao"></p>
+     <h1>Aldrya Haldren, a Portadora do Legado</h1>
+    <section id="sobre">
+        <h2>Sobre o Herói</h2>
+       <img src="imagens/Aldrya.jpeg" alt="Aldrya Haldren segurando um machado de duas lâminas" width="250">
+       <div class="historia">
+         <p>Aldrya Haldren nasceu na pequena vila de Eirnholm, no reino de Valdren, descendente de uma antiga família de guerreiros responsáveis por guardar o lendário machado Haldra. Desde criança, foi treinada por seu pai, enquanto sua mãe cuidava da comunidade e ensinava Aldrya a proteger aqueles ao seu redor.</p>
+         <div id="historia-completa" class="ocultavel">
+           <p>Aos 17 anos, sua vila foi atacada por um grupo de mercenários. Durante o confronto, Aldrya foi ferida e perdeu seus pais e seu irmão mais novo. Antes de morrer, seu pai entregou a ela o Herdeiro, tornando-a a última guardiã do legado de sua família.</p>
+           <p>Desde então, Aldrya percorre o reino como guerreira, carregando consigo o machado e as lembranças de sua família.</p>
+         </div>
+         <button type="button" id="botao-historia" class="botao" aria-expanded="false" aria-controls="historia-completa">Ver história completa</button>
+       </div>
+
+    </section>
+    <section id="atributos">
+        <h2>Atributos & Habilidades</h2>
+       <div class="painel-xp">
+         <div class="stat-header">
+           <span class="stat-name">Nível <span id="nivel">1</span></span>
+           <span class="stat-value"><span id="xp-atual">0</span> / 100 XP</span>
+         </div>
+         <progress id="barra-xp" max="100" value="0" aria-label="Experiência"></progress>
+         <div class="acoes-xp">
+           <button type="button" id="botao-xp" class="botao">⚔️ Completar missão (+25 XP)</button>
+           <button type="button" id="botao-reiniciar" class="botao botao-secundario">Reiniciar progresso</button>
+         </div>
+         <p id="mensagem-xp" class="mensagem" role="status"></p>
+       </div>
+
+       <div class="stats-container">
+       <div class="stat-card" data-atributo="forca">
+    <i class="fa-solid fa-hand-fist icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Força</span>
+        <span class="stat-value">9/10</span>
+      </div>
+      <progress max="10" value="9"></progress>
+    </div>
+  </div>
+
+  <div class="stat-card" data-atributo="destreza">
+    <i class="fa-solid fa-person-running icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Destreza</span>
+        <span class="stat-value">7/10</span>
+      </div>
+      <progress max="10" value="7"></progress>
+    </div>
+  </div>
+
+  <div class="stat-card" data-atributo="constituicao">
+    <i class="fa-solid fa-shield-halved icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Constituição</span>
+        <span class="stat-value">9/10</span>
+      </div>
+      <progress max="10" value="9"></progress>
+    </div>
+  </div>
+
+  <div class="stat-card" data-atributo="inteligencia">
+    <i class="fa-solid fa-book-skull icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Inteligência</span>
+        <span class="stat-value">5/10</span>
+      </div>
+      <progress max="10" value="5"></progress>
+    </div>
+  </div>
+
+  <div class="stat-card" data-atributo="sabedoria">
+    <i class="fa-solid fa-flask-vial icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Sabedoria</span>
+        <span class="stat-value">6/10</span>
+      </div>
+      <progress max="10" value="6"></progress>
+    </div>
+  </div>
+
+  <div class="stat-card" data-atributo="carisma">
+    <i class="fa-solid fa-star icon-box"></i>
+    <div class="stat-content">
+      <div class="stat-header">
+        <span class="stat-name">Carisma</span>
+        <span class="stat-value">8/10</span>
+      </div>
+      <progress max="10" value="8"></progress>
+    </div>
+  </div>
+  </div>
+
+        <ul class="lista-habilidades">
+            <li>Passivas de Combate<ul>
+                <li class="habilidade"><img class="icone-habilidade" src="imagens/icone-mestra-do-machado.jpg" alt="Ícone de Mestra do Machado"><span>Mestra do Machado: Concede +2 no bônus de ataque e +1d8 de dano extra ao utilizar machados de duas mãos.</span></li>
+                <li class="habilidade"><img class="icone-habilidade" src="imagens/icone-legado-haldren.jpg" alt="Ícone de Legado Haldren"><span>Legado Haldren: O machado Haldra ressoa com o sangue da usuária, escalando seu dano base conforme o nível de personagem de Aldrya.</span></li>
+            </ul></li>
+            <li>Habilidades Especiais<ul>
+                <li class="habilidade"><img class="icone-habilidade" src="imagens/icone-furia-haldren.jpg" alt="Ícone de Fúria Haldren"><span>Fúria Haldren: Ativa automaticamente quando os Pontos de Vida (PV) ficam abaixo de 25%. Aumenta o atributo de Força em +4 e concede resistência a dano físico por 3 rodadas.</span></li>
+                <li class="habilidade"><img class="icone-habilidade" src="imagens/icone-ultimo-folego.jpg" alt="Ícone de Último Fôlego"><span>Último Fôlego: Ao sofrer dano que reduziria seus PV a 0, Aldrya cai para 1 PV em vez disso e ganha 1 rodada extra de ação imune a nocaute. (Uso: 1x por descanso longo).</span></li>
+                <li class="habilidade"><img class="icone-habilidade" src="imagens/icone-haldra-desperta.jpg" alt="Ícone de Haldra Desperta"><span>Haldra Desperta: Quando um aliado da família é reduzido a 0 PV, Haldra emite uma aura reluzente, adicionando +2d6 de dano de energia a todos os seus ataques até o fim do encontro.</span></li>
+            </ul></li>
+        </ul>
+
+
+    </section>  
+    <section id="inventario">
+        <h2>Inventário & Conquistas</h2>
+        <p id="contador-itens" class="contador" role="status"></p>
+        <div class="filtros">
+          <span class="rotulo-filtro">Tipo:</span>
+          <div id="filtros-tipo" class="grupo-filtro"></div>
+          <span class="rotulo-filtro">Raridade:</span>
+          <div id="filtros-raridade" class="grupo-filtro"></div>
+        </div>
+        <p id="aviso-inventario" class="mensagem" role="status"></p>
+        <div id="lista-itens" class="grade-itens"></div>
+        <noscript><p>Ative o JavaScript para ver o inventário.</p></noscript>
+    </section>
+    <section id="contato">
+        <h2>Contato com a Guilda</h2>
+        <h4>Quer conhecer mais sobre o meu trabalho?</h4>
+        <form id="form-guilda" novalidate>
+          <p class="dica">Campos com <span class="obrigatorio">*</span> são obrigatórios.</p>
+          <div class="campo">
+            <label for="nome">Nome <span class="obrigatorio">*</span></label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="erro-nome">
+            <small id="erro-nome" class="erro" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="email">E-mail <span class="obrigatorio">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@exemplo.com" required aria-describedby="erro-email">
+            <small id="erro-email" class="erro" aria-live="polite"></small>
+          </div>
+          <div class="campo">
+            <label for="msg">Mensagem <span class="obrigatorio">*</span></label>
+            <textarea id="msg" name="msg" rows="5" required aria-describedby="erro-msg"></textarea>
+            <small id="erro-msg" class="erro" aria-live="polite"></small>
+          </div>
+          <button type="submit" class="botao">Enviar mensagem</button>
+          <p id="status-form" class="mensagem" role="status"></p>
+        </form>
+
+        <p>Ou entre em contato pelas seguintes plataformas:
+            <br>
+            <a href="https://www.linkedin.com/in/gabi-bomfim-9ba6833ab/" target="_blank" rel="noopener">Linkedin</a>
+            <br>
+            <a href="https://github.com/Gabriela-Bomfim" target="_blank" rel="noopener">Github</a>
+        </p>
+    </section>
+   </main>
+   <footer>
+    <p>&copy; Gabriela-Bomfim 2026 - Todos os direitos reservados.</p>
+   </footer>
+  
+</body>
+</html>
